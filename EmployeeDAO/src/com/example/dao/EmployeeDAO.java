@@ -1,6 +1,6 @@
-package src.com.example.dao;
+package com.example.dao;
 
-import src.com.example.model.Employee;
+import com.example.model.Employee;
 
 public interface EmployeeDAO extends AutoCloseable{
     public void add(Employee emp) throws DAOException;

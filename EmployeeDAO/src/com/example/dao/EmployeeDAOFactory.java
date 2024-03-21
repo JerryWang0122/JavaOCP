@@ -1,4 +1,4 @@
-package src.com.example.dao;
+package com.example.dao;
 
 public class EmployeeDAOFactory {
     public EmployeeDAO createEmployeeDAO() {

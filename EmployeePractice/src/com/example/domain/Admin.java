@@ -1,6 +1,6 @@
-package src.com.example.domain;
+package com.example.domain;
 
-public class Admin extends Employee{
+public class Admin extends Employee {
 
     private int hours = 160;
 

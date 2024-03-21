@@ -1,4 +1,4 @@
-package src.com.example.domain;
+package com.example.domain;
 
 import java.text.NumberFormat;
 import java.util.Objects;

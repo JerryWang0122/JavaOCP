@@ -1,11 +1,11 @@
-package src.com.example.test;
+package com.example.test;
 
 import java.io.*;
 
-import src.com.example.dao.DAOException;
-import src.com.example.dao.EmployeeDAO;
-import src.com.example.dao.EmployeeDAOFactory;
-import src.com.example.model.*;
+import com.example.dao.DAOException;
+import com.example.dao.EmployeeDAO;
+import com.example.dao.EmployeeDAOFactory;
+import com.example.model.*;
 import java.util.*;
 import java.text.*;
 

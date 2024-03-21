@@ -1,4 +1,4 @@
-package src.com.example.domain;
+package com.example.domain;
 
 public class Engineer extends Employee implements RegularStaff {
     private String[] skills = {};

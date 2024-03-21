@@ -1,6 +1,6 @@
-package src.com.example;
+package com.example;
 
-import src.com.example.domain.*;
+import com.example.domain.*;
 
 public class EmployeeTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package src.com.example.domain;
+package com.example.domain;
 
 public class Director extends Manager {
     private double baseBonus = 500000;

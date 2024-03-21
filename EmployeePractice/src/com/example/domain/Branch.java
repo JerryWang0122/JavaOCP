@@ -1,4 +1,4 @@
-package src.com.example.domain;
+package com.example.domain;
 
 public enum Branch {
     Taipei("NT$"), London("£"), Paris("€"), Tokyo("¥");
