@@ -2,6 +2,6 @@ package com.example.dao;
 
 public class EmployeeDAOFactory {
     public EmployeeDAO createEmployeeDAO() {
-        return new EmployeeDAOMapImpl();
+        return new EmployeeDAOFileImpl("employees.txt");
     }
 }
