@@ -1,6 +1,2 @@
 # JavaOCP
-Java Learning
-
-Use intellij to perform git commit
-
-Test pull function
+記錄產業新尖兵期間的課程所學和學習記錄
