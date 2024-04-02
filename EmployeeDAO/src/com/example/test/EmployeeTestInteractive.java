@@ -1,13 +1,18 @@
 package com.example.test;
 
-import java.io.*;
-
 import com.example.dao.DAOException;
 import com.example.dao.EmployeeDAO;
 import com.example.dao.EmployeeDAOFactory;
-import com.example.model.*;
-import java.util.*;
-import java.text.*;
+import com.example.model.Employee;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class EmployeeTestInteractive {
 

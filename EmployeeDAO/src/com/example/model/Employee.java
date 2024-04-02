@@ -2,9 +2,8 @@ package com.example.model;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.Locale;
 
 public class Employee {
 
@@ -51,7 +50,7 @@ public class Employee {
     public String toString() {
         return "Employee ID:   " + getId() + "\n"
                 + "Employee Name: " + getFirstName() + " " + getLastName() + "\n"
-                + "Birth Date:    " + new SimpleDateFormat("MMM d, yyyy").format(getBirthDate()) + "\n"
+                + "Birth Date:    " + new SimpleDateFormat("MMM d, yyyy", Locale.US).format(getBirthDate()) + "\n"
                 + "Salary:        " + NumberFormat.getCurrencyInstance().format((double) getSalary());
     }
 
