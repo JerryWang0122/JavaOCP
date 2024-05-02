@@ -74,5 +74,16 @@ public class StreamDemo {
 
         System.out.printf("及格的人有%d人, 總分為%d, 平均為%.2f, 最高分為%d, 最低分為%d%n",
                 stat.getCount(), stat.getSum(), stat.getAverage(), stat.getMax(), stat.getMin());
+
+        /**
+         * Practice
+         * 1. 印出每個名字有幾個字
+         * 2. 平均姓名有幾個字
+         */
+        String[] names = {"John", "Bob", "James", "Robert", "Thomas", "Donald", "Paul"};
+        Arrays.stream(names)
+                .peek(name -> System.out.println(name + " has " + name.length() + " letters"))
+                .mapToInt(String::length)
+                .average().ifPresent(d -> System.out.printf("平均姓名有%.2f個字%n", d));
     }
 }
