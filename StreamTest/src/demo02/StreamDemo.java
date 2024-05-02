@@ -58,5 +58,21 @@ public class StreamDemo {
         System.out.println(stat.getAverage());
         System.out.println(stat.getMin());
         System.out.println(stat.getMax());
+
+        System.out.println("===============");
+        /* MapToInt (Java Stream)
+            計算及格人數
+            總分、平均、最高、最低
+        */
+        String[] scores = {"100", "abc", "三百", "74", "20", null, "我考過了", "-50", "90"};
+        stat = Arrays.stream(scores)
+                .filter(score -> score != null)
+                .filter(score -> score.matches("-?\\d+"))
+                .mapToInt(Integer::parseInt)
+                .filter(score -> score >= 60)
+                .summaryStatistics();
+
+        System.out.printf("及格的人有%d人, 總分為%d, 平均為%.2f, 最高分為%d, 最低分為%d%n",
+                stat.getCount(), stat.getSum(), stat.getAverage(), stat.getMax(), stat.getMin());
     }
 }
