@@ -1,9 +1,16 @@
 package demo02;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamDemo {
     public static void main(String[] args) {
@@ -85,5 +92,30 @@ public class StreamDemo {
                 .peek(name -> System.out.println(name + " has " + name.length() + " letters"))
                 .mapToInt(String::length)
                 .average().ifPresent(d -> System.out.printf("平均姓名有%.2f個字%n", d));
+
+        System.out.println("===============");
+        /* 將字典檔讀入*/
+        String path = "src/demo02";
+        String fileName = "words.txt";
+        Path resourceDir = Paths.get(path);
+
+        try (Stream<String> lines = Files.lines(resourceDir.resolve(fileName))){
+            lines.filter(s -> s.length() > 20)  // 篩選出 20 個字以上的字串
+                    .collect(Collectors.groupingBy(String::length, Collectors.counting()))
+                    .forEach((len, num) -> System.out.printf("%d: %d%n", len, num));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("===============");
+        /**
+         * Practice 2
+         * 將9個水果，計算出現次數
+         */
+        String[] fruits = {"apple", "apple", "banana", "watermelon","apple", "orange",
+                            "watermelon", "banana", "coconut"};
+        Stream.of(fruits)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .forEach((k, v) -> System.out.println(k + "有" + v + "個"));
     }
 }
